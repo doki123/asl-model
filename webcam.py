@@ -1,6 +1,6 @@
 # CREATE FOLDERS AND DOWNLOAD MEDIAPIPE
-!mkdir captured_images
-!mkdir annotated_images
+!mkdir captured_images # stores pre-processed images
+!mkdir annotated_images # store processed images
 !pip install mediapipe
 
 # INSTALL PACKAGES
