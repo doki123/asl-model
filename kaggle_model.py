@@ -28,7 +28,7 @@ from tensorflow.keras.metrics import categorical_crossentropy
 from tensorflow.keras.optimizers import Adam, Adamax
 from tensorflow.keras import regularizers
 from tensorflow.keras.models import Model
-# pprevent annoying tensorflow warning
+# prevent annoying tensorflow warning
 
 # READ IN IMAGES AND CREATE A DATAFRAME OF IMAGE PATHS AND CLASS LABELS
 
