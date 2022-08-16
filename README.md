@@ -1,5 +1,12 @@
 A neural network used to identify American Sign Language letters and numbers
 
+**USING THE KAGGLE MODEL:**
+
+1. Create a new notebook in Google Colab, and mount the Google Drive.
+2. Download the dataset from https://www.kaggle.com/code/gpiosenka/callback-continue-or-halt-training-f1-96/notebook into Google Drive. 
+	- Originally, the entire dataset was downloaded directly into the user's computer system. However, due to the size of the complete dataset, many      classes did not end up downloaded. Next, subfolders were downloaded individually into Google Drive to ensure all images get transferred; while downloading the different classes, however, the disparity of image counts between classes was becoming increasingly large (eg the sign for _0_ had barely 100 images, while the sign for _a_ had over 1000). In order to both reduce the difference and the download time for the dataset, the subfolders were manually cancelled once 500-1000 images were downloaded. 
+3. At line 35 in kaggle_model.py, line _sdir = 'drive/MyDrive/processed_combine_asl_dataset'_, set the directory to the location of the downloaded dataset in the Drive.   
+
 This application is a neural network created in Google Colab, based on source code and trained on a dataset sourced from Kaggle. Working in tandem to this, images from a webcam are captured and processed using the mediapipe library. This converted data can then be fed into a saved version of the model in order to return its predicted classification. Mediapipe can superimpose a hand’s major points–specifically, the joints of fingers and the palm–onto an image and return the coordinates of each landmark. The usage of this library can increase the accuracy of the predictions by cutting out the background noise of colors and obscuring objects. 
 
 At first, there was trouble using the provided dataset for training due to its size; because Google Colab limits the size of files uploaded, the dataset could not be manually uploaded from the computer’s files. This issue was solved by transferring the dataset to a Google Drive, which could then be mounted and accessed through subdirectories. 
