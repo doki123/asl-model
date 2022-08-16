@@ -16,7 +16,9 @@ A neural network used to identify American Sign Language letters and numbers
 
 **USING THE WEBCAM AND PREDICTIONS**
 
-
+1. The first three lines of webcam.py create the folder that stores live-captured images (_captured_images_), the folder that stores the processed iamges (_annotated_images_), and installs mediapipe. Once done, however, it can be commented out in future runs. 
+2. In line 20, _last_photo = sorted(os.listdir('captured_images'), reverse=True)_, this variable is used both to check for the existence of .ipynb_checkpoints and to use the number of the last image captured, if images already exist in the folder. However, .ipynb_checkpoints will appear at random, and therefore the next line (_last_photo.remove('.ipynb_checkpoints')_) may or may not be relevant. In order to check, print out _last_photo_ before commenting out line 21.
+3. Varibale _photo_num_ is used to number the images captured, starting from appending 0 to the name of the first image saved into _captured_images_, and increasing by 1 to every subsequent image captured. 
 
 This application is a neural network created in Google Colab, based on source code and trained on a dataset sourced from Kaggle. Working in tandem to this, images from a webcam are captured and processed using the mediapipe library. This converted data can then be fed into a saved version of the model in order to return its predicted classification. Mediapipe can superimpose a hand’s major points–specifically, the joints of fingers and the palm–onto an image and return the coordinates of each landmark. The usage of this library can increase the accuracy of the predictions by cutting out the background noise of colors and obscuring objects. 
 
