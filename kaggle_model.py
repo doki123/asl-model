@@ -478,6 +478,7 @@ def predictor(test_gen, test_steps):
 
 errors, tests = predictor(test_gen, test_steps)
 
+# SAVE THE MODEL
 subject = 'asl' 
 acc = str((1 - errors / tests) * 100)
 index = acc.rfind('.')
